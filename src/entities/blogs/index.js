@@ -3,62 +3,62 @@
 exports.register = (server, options, next) => {
   const DB = require('../../db');
   const model = require('./model');
-  const db = new DB(options.db, 'users');
+  const db = new DB(options.db, 'blogs');
   const handler = require('./handler')(server, db);
 
-  // Expose Users DB if need be
-  server.expose('users', () => db);
+  // Expose Blogs DB if need be
+  server.expose('blogs', () => db);
 
   // Add the users routes
   server.route([
     {
       method: 'GET',
-      path: '/users',
-      handler: handler.getUsers
+      path: '/blogs',
+      handler: handler.getBlogs
     },
     {
       method: 'POST',
-      path: '/users',
-      handler: handler.createUser,
+      path: '/blogs',
+      handler: handler.createBlog,
       config: {
         validate: {
-          payload: model.newUser
+          payload: model.newBlog
         }
       }
     },
     {
       method: 'GET',
-      path: '/users/{user}',
-      handler: handler.getUserById,
+      path: '/blogs/{blog}',
+      handler: handler.getBlogById,
       config: {
         validate: {
           params: {
-            user: model.userId
+            blog: model.blogId
           }
         }
       }
     },
     {
       method: 'PUT',
-      path: '/users/{user}',
-      handler: handler.updateUserById,
+      path: '/blogs/{blog}',
+      handler: handler.updateBlogById,
       config: {
         validate: {
           params: {
-            user: model.userId
+            blog: model.blogId
           },
-          payload: model.updateUser
+          payload: model.updateBlog
         }
       }
     },
     {
       method: 'DELETE',
-      path: '/users/{user}',
-      handler: handler.deleteUserById,
+      path: '/blogs/{blog}',
+      handler: handler.deleteBlogById,
       config: {
         validate: {
           params: {
-            user: model.userId
+            blog: model.blogId
           }
         }
       }
@@ -69,5 +69,5 @@ exports.register = (server, options, next) => {
 };
 
 exports.register.attributes = {
-  name: 'users'
+  name: 'blogs'
 };

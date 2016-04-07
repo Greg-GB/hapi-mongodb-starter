@@ -4,8 +4,8 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 
 class DB {
-  constructor(app, collectionName) {
-    this.db = app.dbConn.collection(collectionName);
+  constructor(dbConn, collectionName) {
+    this.db = dbConn.collection(collectionName);
   }
   static createIndexes(conn) {
     const indexes = [

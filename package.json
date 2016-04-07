@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Hapi API starter with MongoDB.",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node index.js"
   },
   "keywords": [
     "hapi",
@@ -23,5 +23,5 @@
   "author": "Greg Byram",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "main": "src/index.js"
+  "main": "index.js"
 }
