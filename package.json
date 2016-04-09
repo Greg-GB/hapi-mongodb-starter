@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Hapi API starter with MongoDB.",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/lab -c"
   },
   "keywords": [
     "hapi",
@@ -14,10 +15,13 @@
   ],
   "dependencies": {
     "boom": "^3.1.2",
+    "code": "^2.2.0",
     "good": "^6.6.0",
     "good-console": "^5.3.1",
     "hapi": "^13.2.2",
     "joi": "^8.0.5",
+    "lab": "^10.3.1",
+    "mocha": "^2.4.5",
     "mongodb": "^2.1.14"
   },
   "author": "Greg Byram",

@@ -2,11 +2,11 @@
 
 const Good = require('good');
 const GoodConsole = require('good-console');
-const users = require('./entities/users/index');
-const blogs = require('./entities/blogs/index');
+const users = require('./entities/users');
+const blogs = require('./entities/blogs');
 
 module.exports = (db) => {
-  let plugins = [];
+  const plugins = [];
 
   // Good Plugin
   plugins.push({
@@ -38,5 +38,5 @@ module.exports = (db) => {
     }
   });
 
-  return plugins;
+  return plugins
 };

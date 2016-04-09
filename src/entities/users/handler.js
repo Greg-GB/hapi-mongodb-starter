@@ -1,7 +1,7 @@
 module.exports = (server, users) => {
   return {
     getUsers: (request, reply) => {
-      return users.find({})
+      return users.find(request.query)
         .then(reply, (err) => reply.handleError(err));
     },
     getUserById(request, reply) {

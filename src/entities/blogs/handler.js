@@ -1,7 +1,7 @@
 module.exports = (server, blogs) => {
   return {
     getBlogs: (request, reply) => {
-      return blogs.find({})
+      return blogs.find(request.query)
         .then(reply, (err) => reply.handleError(err));
     },
     getBlogById(request, reply) {

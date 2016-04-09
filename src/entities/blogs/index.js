@@ -65,9 +65,10 @@ exports.register = (server, options, next) => {
     }
   ]);
 
-  next();
+  return next();
 };
 
 exports.register.attributes = {
-  name: 'blogs'
+  name: 'blogs',
+  dependencies: 'users'
 };
