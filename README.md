@@ -1,12 +1,14 @@
-# Hapi API with MongoDB
+# Hapi API starter with MongoDB
 
-This is a Node 4.x ES2015 Hapi API starter with a MongoDB backend. I will be adding more as I go (tests, auth, more types, etc) but feel free to contribute! Stay Hapi my friends.
+This is a Node 4.x ES2015 Hapi API starter with MongoDB. I will add more as I go (tests, auth, types, etc) but feel free to contribute! Stay Hapi my friends.
 
 ## Features
-+ Hapi (with Plugins)
++ Hapi (with plugins)
     - Joi
     - Boom
     - Good / Good Console
+    - Lab
+    - Code
 + MongoDB
 + ES2015 (Promises, Classes, Let, Const, etc...)
 
@@ -20,6 +22,12 @@ $ npm install
 * Node 4.x
 * MonogDB
 
+## Run Tests:
+
+```bash
+$ npm run test
+```
+
 ## Start the API:
 
 ```bash
@@ -28,8 +36,20 @@ $ npm start
 
 ## Usage Example
 
-```bash
-$ curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:3000/users
+```
+$ GET http://localhost:3000/users
+$ GET http://localhost:3000/users/:userId
+$ POST http://localhost:3000/users
+$ PUT http://localhost:3000/users/:userId
+$ DELETE http://localhost:3000/users/:userId
+```
+
+```
+$ GET http://localhost:3000/blogs
+$ GET http://localhost:3000/blogs/:blogId
+$ POST http://localhost:3000/blogs
+$ PUT http://localhost:3000/blogs/:blogId
+$ DELETE http://localhost:3000/blogs/:blogId
 ```
 
 ## License
